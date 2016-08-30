@@ -1,0 +1,29 @@
+{
+  "name": "01",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "node-cal": "bin/node-cal"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha -- -R nyan"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-14/node-cal-zeller-can-kiss-my-ass.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-14/node-cal-zeller-can-kiss-my-ass/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-14/node-cal-zeller-can-kiss-my-ass#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
+  }
+}
