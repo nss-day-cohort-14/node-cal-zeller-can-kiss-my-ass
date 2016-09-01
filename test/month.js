@@ -1,7 +1,7 @@
 'use strict';
 
 const { isFunction, strictEqual, oneOf } = require('chai').assert;
-const { getWeeks, makeMonth } = require('../lib/month');
+const { getWeeks, makeMonth, getMonthName, setMonthTitle } = require('../lib/month');
 const { zeller } = require('../lib/zeller');
 const { cal } = require('../lib/cal');
 
@@ -27,7 +27,7 @@ describe('month module', () => {
   });
 
 
-  describe('makeMonth()', () => {
+  describe('makeMonth', () => {
 
     it('should be a function', () => {
       isFunction(makeMonth);
@@ -53,5 +53,23 @@ describe('month module', () => {
     });//End 'June 2016'
 
   });
+
+  describe('getMonthName', () => {
+    it('should take a number and convert it to the correct month name string', () => {
+      let month = 1
+      strictEqual(getMonthName(month), "January");
+    });
+     it('should take a number and convert it to the correct month name string', () => {
+      strictEqual(getMonthName(3), "March");
+    });
+  })
+
+  describe('setMonthTitle', () => {
+    it('should take getMonthName and append the correct year', () => {
+      let month = "January",
+          year = 2016;
+      strictEqual(setMonthTitle(month, year), "January 2016")
+    })
+  })
 
 });
