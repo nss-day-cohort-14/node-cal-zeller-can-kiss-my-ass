@@ -1,7 +1,7 @@
 'use strict';
 
-const { isFunction, strictEqual, oneOf } = require('chai').assert;
-const { getWeeks, makeMonth, getMonthName, setMonthTitle } = require('../lib/month');
+const { isFunction, strictEqual, oneOf, deepEqual } = require('chai').assert;
+const { getWeeks, makeMonth, getMonthName, setMonthTitle, getMonthLength, checkLeapYear } = require('../lib/month');
 const { zeller } = require('../lib/zeller');
 const { cal } = require('../lib/cal');
 
@@ -32,6 +32,21 @@ describe('month module', () => {
     it('should be a function', () => {
       isFunction(makeMonth);
     });
+
+    it('should return a length of 6', () => {
+      strictEqual(makeMonth(5, 2345).length, 6);
+    })
+
+    it('should return an array of 6 week strings', () => {
+      let month = 8, year = 2016;
+      let expected = ['    1  2  3  4  5  6',
+                      ' 7  8  9 10 11 12 13',
+                      '14 15 16 17 18 19 20',
+                      '21 22 23 24 25 26 27',
+                      '28 29 30 31         ',
+                      '                    '];
+      deepEqual(makeMonth(month, year), expected);
+    })
 
     describe('June 2016', () => {
       let month = 6,
@@ -71,5 +86,20 @@ describe('month module', () => {
       strictEqual(setMonthTitle(month, year), "January 2016")
     })
   })
+
+  describe('getMonthLength', () => {
+    it.skip('should take a month number and return the # of days in the month', () => {
+      let month = 1
+      strictEqual(getMonthLength(month), 31);
+    });
+  })
+
+  describe('checkLeapYear', () => {
+    it.skip('should take a year and return true for leap year', () => {
+      let year = 2016
+      strictEqual(checkLeapYear(year), false);
+    });
+  })
+
 
 });
