@@ -12,27 +12,29 @@ const calYear = '                             2016\n\n      January             
 
 describe('cli module', () => {
 
-  // it('should handle no arguments', (done) => {
-  //   exec('bin/node-cal', (err, stdout) => {
-  //       strictEqual(stdout.toString(), calString);
-  //       done();
-  //   });
-  // });
+  it.skip('should handle no arguments', (done) => {
+    exec('bin/node-cal', (err, stdout) => {
+      exec('cal', (err2, stdout2) => {
+        strictEqual(stdout.toString(), stdout2);
+        done();
+      })
+    });
+  });
 
 
-  // it('should handle 1 argument, which should be full cal year', (done) => {
-  //   exec('bin/node-cal 2016', (err, stdout) => {
-  //       strictEqual(stdout.toString(), calYear);
-  //       done();
-  //   });
-  // });
+  it.skip('should handle 1 argument, which should be full cal year', (done) => {
+    exec('bin/node-cal 2016', (err, stdout) => {
+        strictEqual(stdout.toString(), calYear);
+        done();
+    });
+  });
 
 
-  // it('should handle 1 arguments', (done) => {
-  //   exec('bin/node-cal 8 2016', (err, stdout) => {
-  //       strictEqual(stdout.toString(), calString);
-  //       done();
-  //   });
-  // });
+  it.skip('should handle 1 arguments', (done) => {
+    exec('bin/node-cal 8 2016', (err, stdout) => {
+        strictEqual(stdout.toString(), calString);
+        done();
+    });
+  });
 
 });
