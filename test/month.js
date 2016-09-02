@@ -95,9 +95,21 @@ describe('month module', () => {
   })
 
   describe('checkLeapYear', () => {
-    it.skip('should take a year and return true for leap year', () => {
+    it.skip('should take a known leap year and return true for leap year', () => {
       let year = 2016
+      strictEqual(checkLeapYear(year), true);
+    });
+    it.skip('should take a non-leap year and return false for leap year', () => {
+      let year = 2015
       strictEqual(checkLeapYear(year), false);
+    });
+    it.skip('should take a non-leap century year and return false for leap year', () => {
+      let year = 2100
+      strictEqual(checkLeapYear(year), false);
+    });
+    it.skip('should take a leap century year and return true for leap year', () => {
+      let year = 2400
+      strictEqual(checkLeapYear(year), true);
     });
   })
 
