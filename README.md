@@ -1,17 +1,24 @@
-# Emulate the existing Cal app in the Node enviroment and TDD ideas
-
-**Things you need**
-
-1 node installed
-
-2 npm install
-
-### How to execute
-
-* Type bin/node-cal - to display the current month
-
-* Type bin/node-cal 8 or any number - to display that month in the current year
-
-* Type bin/node-cal 4 2012 or any combination - to display that month and that year
+# node-cal
 
 
+
+// DONE // 1 -> January
+
+// DONE // Function to convert input from 1 2016 -> "Jan 2016"
+// DONE // Function to center text - foo, 5 -> "_foo_" / foo, 6 - > "_foo__"
+// DONE // Pad left
+Truncated
+// DONE // Hard code the days - Su Mo Tu We Th Fr Sa
+Center on 20 chars and max 8
+min weeks height = 6
+week length = 7
+day width = 2
+dayNames = ["Sunday", "Monday" ...]
+monthNames = ["January", "February" ...]
+All digits need left padding
+function to pre-pend on starting day based on index
+function for trailing spaces after the end of the month
+Grid size =42
+Grid size - days in month - days prepended before start date
+Trim right - function in Node
+>>>>>>> a74132a92345d32df14102ce42928d20ff97a817
