@@ -21,3 +21,4 @@ function for trailing spaces after the end of the month
 Grid size =42
 Grid size - days in month - days prepended before start date
 Trim right - function in Node
+>>>>>>> a74132a92345d32df14102ce42928d20ff97a817
